@@ -1,40 +1,43 @@
 {
   "name": "garage-store",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/pages/index.js",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "eslint src/ --fix"
   },
-  "dependencies": {
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "next": "13.2.4",
-    "prettier": "^2.8.7",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.60.0"
-  },
-  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
-  "main": "src/pages/index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alejandroch1202/garage-store.git"
   },
   "keywords": [
-    "next.js",
-    "react.js",
-    "node.js"
+    "nodejs",
+    "reactjs",
+    "nextjs",
+    "sass"
   ],
   "author": "Alejandro Chavez <alejandrochavez1202@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alejandroch1202/garage-store/issues"
   },
-  "homepage": "https://github.com/alejandroch1202/garage-store#readme"
+  "homepage": "https://github.com/alejandroch1202/garage-store#readme",
+  "dependencies": {
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.7",
+    "sass": "^1.60.0",
+    "eslint": "^8.37.0",
+    "eslint-config-next": "^13.2.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1"
+  }
 }
