@@ -4,7 +4,12 @@
       "paths": {
         "@icons/*": ["assets/icons/*"],
         "@logos/*": ["assets/logos/*"],
+        "@components/*": ["components/*"],
+        "@containers/*": ["containers/*"],
+        "@context/*": ["context/*"],
+        "@hooks/*": ["hooks/*"],
         "@pages/*": ["pages/*"],
+        "@styles/*": ["styles/*"],
       }
     }
   }

@@ -9,6 +9,7 @@ module.exports = {
   extends: ['eslint:recommended', 'plugin:jsx-a11y/recommended', 'plugin:prettier/recommended', 'next'],
   rules: {
     semi: ['error', 'always'],
+    '@next/next/no-img-element': 'off',
     'prettier/prettier': 2,
   },
 };

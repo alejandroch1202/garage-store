@@ -1,8 +1,17 @@
+import Layout from '@containers/Layout/Layout';
+import Search from '@components/Search/Search';
+import ProductList from '@containers/ProductList/ProductList';
+import Head from 'next/head';
+
 function Home() {
   return (
-    <div>
-      <h1>Garage Store</h1>
-    </div>
+    <Layout>
+      <Head>
+        <title>Garage Store</title>
+      </Head>
+      <Search />
+      <ProductList />
+    </Layout>
   );
 }
 
