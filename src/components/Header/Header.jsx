@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Menu from '@components/Menu/Menu';
+import MobileMenu from '@components/MobileMenu/MobileMenu';
 import Link from 'next/link';
 import AppContext from '@context/AppContext';
 import menu from '@icons/icon_menu.svg';
@@ -58,6 +59,7 @@ const Header = () => {
           </ul>
         </div>
         {state.menuIsOpen && <Menu />}
+        {<MobileMenu />}
       </nav>
       {/* {state.orderIsOpen && <MyOrder />} */}
     </>

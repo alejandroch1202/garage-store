@@ -1,0 +1,44 @@
+@use '@styles/variables' as v;
+
+.mobile-menu {
+  display: none;
+  padding: 24px;
+  position: absolute;
+  top: 61px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: v.$white;
+
+  a {
+    text-decoration: none;
+    color: v.$black;
+    font-weight: bold;
+  }
+  ul {
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+  }
+  ul:nth-child(1) {
+    border-bottom: 1px solid v.$light-gray;
+  }
+  ul li {
+    margin-bottom: 24px;
+  }
+
+  .email {
+    font-size: v.$sm;
+    font-weight: normal;
+  }
+  .sign-out {
+    font-size: v.$sm;
+    color: v.$garage-green;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-menu {
+    display: none;
+  }
+}

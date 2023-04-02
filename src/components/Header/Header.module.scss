@@ -92,8 +92,12 @@
     .menu {
       display: block;
     }
-    .navbar-left ul {
-      display: none;
+    .navbar-left {
+      margin-left: 30px;
+
+      ul {
+        display: none;
+      }
     }
     .navbar-email {
       display: none;
