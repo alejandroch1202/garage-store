@@ -7,7 +7,7 @@ import arrow from '@icons/left-arrow.svg';
 import styles from './ShoppingCartItem.module.scss';
 
 const ShoppingCartItem = () => {
-  const { state, toggleOrder } = useContext(AppContext);
+  const { state, toggleShopping } = useContext(AppContext);
 
   const sumTotal = () => {
     const reducer = (accumalator, currentValue) => accumalator + currentValue.price;
@@ -19,7 +19,7 @@ const ShoppingCartItem = () => {
     <aside className={styles.ShoppingCartItem}>
       <div className={styles['container']}>
         <div className={styles['title-container']}>
-          <Image className={`${styles['more-clickable-area']} ${styles.pointer}`} src={arrow} alt="arrow" onClick={() => toggleOrder()} />
+          <Image className={`${styles['more-clickable-area']} ${styles.pointer}`} src={arrow} alt="arrow" onClick={() => toggleShopping()} />
           <p className={styles.title}>Shopping cart</p>
         </div>
         <div className={styles['my-order-content']}>

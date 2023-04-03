@@ -3,7 +3,9 @@ import { useState } from 'react';
 const initialState = {
   cart: [],
   orderIsOpen: false,
+  shoppingIsOpen: false,
   menuIsOpen: false,
+  mobileIsOpen: false,
 };
 
 const useInitialState = () => {
@@ -23,6 +25,16 @@ const useInitialState = () => {
     });
   };
 
+  const closeAll = () => {
+    setState({
+      ...state,
+      shoppingIsOpen: false,
+      orderIsOpen: false,
+      menuIsOpen: false,
+      mobileIsOpen: false,
+    });
+  };
+
   const toggleOrder = () => {
     setState({
       ...state,
@@ -37,12 +49,29 @@ const useInitialState = () => {
     });
   };
 
+  const toggleMobile = () => {
+    setState({
+      ...state,
+      mobileIsOpen: !state.mobileIsOpen,
+    });
+  };
+
+  const toggleShopping = () => {
+    setState({
+      ...state,
+      shoppingIsOpen: !state.shoppingIsOpen,
+    });
+  };
+
   return {
     state,
     addToCart,
     removeFromCart,
+    closeAll,
     toggleOrder,
     toggleMenu,
+    toggleMobile,
+    toggleShopping,
   };
 };
 

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Menu from '@components/Menu/Menu';
 import MobileMenu from '@components/MobileMenu/MobileMenu';
+import ShoppingCartItem from '@containers/ShoppingCartItem/ShoppingCartItem';
 import Link from 'next/link';
 import AppContext from '@context/AppContext';
 import menu from '@icons/icon_menu.svg';
@@ -10,12 +11,12 @@ import shoppingCart from '@icons/icon_shopping_cart.svg';
 import styles from './Header.module.scss';
 
 const Header = () => {
-  const { state, toggleOrder, toggleMenu } = useContext(AppContext);
+  const { state, toggleShopping, toggleMenu, toggleMobile } = useContext(AppContext);
 
   return (
     <>
       <nav className={styles.nav}>
-        <img src={menu.src} alt="menu" className={styles.menu} />
+        <img src={menu.src} alt="menu" className={styles.menu} onClick={() => toggleMobile()} onKeyDown={() => toggleMobile()} />
         <div className={`${styles['navbar-left']} prevent-select`}>
           <Link href="/">
             <img src={logo.src} alt="logo" className={styles['nav-logo']} />
@@ -52,16 +53,16 @@ const Header = () => {
               alejandroch@dev.com
               <img className={styles.arrow} src={arrow.src} alt="arrow" />
             </li>
-            <li role="presentation" className={styles['navbar-shopping-cart']} onClick={() => toggleOrder()} onKeyDown={() => toggleOrder()}>
+            <li role="presentation" className={styles['navbar-shopping-cart']} onClick={() => toggleShopping()} onKeyDown={() => toggleShopping()}>
               <img src={shoppingCart.src} alt="shopping cart" />
               {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
             </li>
           </ul>
         </div>
         {state.menuIsOpen && <Menu />}
-        {<MobileMenu />}
+        {state.mobileIsOpen && <MobileMenu />}
       </nav>
-      {/* {state.orderIsOpen && <MyOrder />} */}
+      {state.shoppingIsOpen && <ShoppingCartItem />}
     </>
   );
 };
