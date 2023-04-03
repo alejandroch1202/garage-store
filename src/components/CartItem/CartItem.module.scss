@@ -1,0 +1,33 @@
+@use '@styles/variables' as v;
+
+.CartItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+
+  figure {
+    margin: 0;
+
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  }
+
+  p:nth-child(2) {
+    color: v.$light-gray;
+  }
+
+  p:nth-child(3) {
+    font-size: v.$md;
+    font-weight: bold;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+}

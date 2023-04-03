@@ -12,10 +12,10 @@ const Menu = () => {
           </Link>
         </li>
         <li>
-          <Link href="/">My account</Link>
+          <Link href="/account">My account</Link>
         </li>
         <li>
-          <Link href="/">Sign out</Link>
+          <Link href="/login">Sign out</Link>
         </li>
       </ul>
     </div>
