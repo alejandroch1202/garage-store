@@ -3,7 +3,8 @@ import ProductItem from '@components/ProductItem/ProductItem';
 import useGetProducts from '@hooks/useGetProducts';
 import styles from './ProductList.module.scss';
 
-const API = 'https://api.escuelajs.co/api/v1/products?limit=16&offset=0';
+// const API = 'https://express-api-alejandroch1202.vercel.app/api/v1/products';
+const API = 'https://fakestoreapi.com/products?limit=20&offset=0';
 
 const ProductList = () => {
   const products = useGetProducts(API);

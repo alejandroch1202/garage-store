@@ -7,7 +7,7 @@ const Menu = () => {
     <div className={styles.Menu}>
       <ul>
         <li>
-          <Link href="/" className={styles.title}>
+          <Link href="/orders" className={styles.title}>
             My orders
           </Link>
         </li>

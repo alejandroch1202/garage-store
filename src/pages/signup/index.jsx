@@ -18,7 +18,7 @@ const Signup = () => {
               <label htmlFor="name" className={styles.label}>
                 Name
               </label>
-              <input type="text" id="name" placeholder="Alejandro" className={`${styles.input} ${styles['input-name']}`} />
+              <input type="text" id="name" placeholder="Alejandro Chavez" className={`${styles.input} ${styles['input-name']}`} />
 
               <label htmlFor="email" className={styles.label}>
                 Email

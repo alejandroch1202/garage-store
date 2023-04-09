@@ -33,7 +33,7 @@
 
   .product-image {
     width: 450px;
-    height: 450px;
+    height: 350px;
     object-fit: cover;
   }
 
@@ -60,6 +60,9 @@
     font-size: v.$lg;
     margin-top: 0;
     margin-bottom: 36px;
+    height: 140px;
+    overflow: scroll;
+    overflow-x: hidden;
   }
 
   .add-to-cart-button {

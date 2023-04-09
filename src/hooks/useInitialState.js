@@ -2,10 +2,12 @@ import { useState } from 'react';
 
 const initialState = {
   cart: [],
+  product: {},
   orderIsOpen: false,
   shoppingIsOpen: false,
   menuIsOpen: false,
   mobileIsOpen: false,
+  productInfoIsOpen: false,
 };
 
 const useInitialState = () => {
@@ -22,6 +24,14 @@ const useInitialState = () => {
     setState({
       ...state,
       cart: state.cart.filter((items) => items.id !== payload.id),
+    });
+  };
+
+  const setProduct = (payload) => {
+    setState({
+      ...state,
+      product: payload,
+      productInfoIsOpen: !state.productInfoIsOpen,
     });
   };
 
@@ -63,15 +73,24 @@ const useInitialState = () => {
     });
   };
 
+  const toggleInfo = () => {
+    setState({
+      ...state,
+      productInfoIsOpen: !state.productInfoIsOpen,
+    });
+  };
+
   return {
     state,
     addToCart,
     removeFromCart,
+    setProduct,
     closeAll,
     toggleOrder,
     toggleMenu,
     toggleMobile,
     toggleShopping,
+    toggleInfo,
   };
 };
 

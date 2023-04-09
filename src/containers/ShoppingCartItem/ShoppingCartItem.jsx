@@ -11,7 +11,7 @@ const ShoppingCartItem = () => {
 
   const sumTotal = () => {
     const reducer = (accumalator, currentValue) => accumalator + currentValue.price;
-    const sum = state.cart.reduce(reducer, 0);
+    const sum = state.cart.reduce(reducer, 0).toFixed(2);
     return sum;
   };
 

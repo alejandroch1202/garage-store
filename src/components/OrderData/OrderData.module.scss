@@ -1,0 +1,34 @@
+@use '@styles/variables' as v;
+
+.OrderData {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+
+  div {
+    p:nth-child(1) {
+      font-size: v.$lg;
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    p:nth-child(2) {
+      color: v.$light-gray;
+      font-size: v.$md;
+      margin: 0;
+    }
+  }
+
+  .price {
+    font-size: v.$lg;
+    font-weight: bold;
+    text-align: end;
+  }
+
+  img {
+    cursor: pointer;
+  }
+}

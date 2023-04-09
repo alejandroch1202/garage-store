@@ -1,0 +1,52 @@
+@use '@styles/variables' as v;
+
+.Checkout {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.title {
+  font-size: v.$xl;
+  margin-bottom: 40px;
+}
+
+.Checkout-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 350px;
+}
+
+.Checkout-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.order {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+  background-color: v.$very-light-gray;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  padding: 0 24px;
+
+  p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+  }
+  p span:nth-child(1) {
+    font-size: v.$lg;
+    font-weight: bold;
+  }
+  p span:nth-child(2) {
+    font-size: v.$md;
+    color: v.$light-gray;
+  }
+  p:nth-child(2) {
+    text-align: end;
+    font-weight: bold;
+  }
+}

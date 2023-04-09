@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '@context/AppContext';
 import addToCart from '@icons/icon_shopping_cart_white.svg';
 import closeImg from '@icons/close.svg';
 import styles from './ProductInfo.module.scss';
 
 const ProductInfo = () => {
+  const { state, toggleInfo } = useContext(AppContext);
+
   return (
     <>
       <div className={styles.ProductInfo}>
         <div className={styles['close-img']}>
-          <img src={closeImg.src} alt="close" />
+          <img role="presentation" src={closeImg.src} alt="close" onClick={toggleInfo} onKeyDown={toggleInfo} />
         </div>
-        <img className={styles['product-image']} src="https://cdn.lorem.space/images/watch/.cache/640x480/david-svihovec-HM-Y497t5CU-unsplash.jpg" alt="bike" />
+        <img className={styles['product-image']} src={state.product?.image} alt="bike" />
         <div>
-          <p>$ 70,00</p>
-          <p>Smart Watch</p>
-          <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
+          <p>$ {state.product?.price.toFixed(2)}</p>
+          <p>{state.product?.title}</p>
+          <p className={styles.description}>{state.product?.description}</p>
           <button className={styles['add-to-cart-button']}>
             <img src={addToCart.src} alt="add to cart" />
             Add to cart
