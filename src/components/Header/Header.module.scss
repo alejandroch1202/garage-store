@@ -91,6 +91,9 @@
 
 @media (max-width: 640px) {
   .nav {
+    .nav-logo {
+      width: 175px;
+    }
     .menu {
       display: block;
     }

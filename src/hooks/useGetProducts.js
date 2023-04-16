@@ -5,10 +5,15 @@ const useGetProducts = (API) => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(API);
-      const data = await response.json();
-      setProducts(data);
+      try {
+        const response = await fetch(API);
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('API error');
+      }
     }
+
     fetchData();
   }, [API]);
 

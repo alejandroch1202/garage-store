@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       <nav className={styles.nav}>
-        <img src={menu.src} alt="menu" className={styles.menu} onClick={() => toggleMobile()} onKeyDown={() => toggleMobile()} />
+        <img role="presentation" src={menu.src} alt="menu" className={styles.menu} onClick={() => toggleMobile()} onKeyDown={() => toggleMobile()} />
         <div className={`${styles['navbar-left']} prevent-select`}>
           <Link href="/">
             <img src={logo.src} alt="logo" className={styles['nav-logo']} />

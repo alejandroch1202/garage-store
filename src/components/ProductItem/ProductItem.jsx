@@ -17,12 +17,11 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className={styles.ProductItem}>
-      <img role="presentation" src={product.image} alt={product.title} onClick={() => handleInfo(product)} onKeyDown={() => handleInfo(product)} />
-      {/* <img src={product.images[0]} alt={product.title} /> */}
+      <img role="presentation" src={product.image} alt={product.name} onClick={() => handleInfo(product)} onKeyDown={() => handleInfo(product)} />
       <div className={styles['product-info']}>
         <div>
           <p>$ {product.price.toFixed(2)}</p>
-          <p>{product.title}</p>
+          <p>{product.name}</p>
         </div>
         <figure role="presentation" className={styles['more-clickable-area']} onClick={() => handleClick(product)} onKeyDown={() => handleClick(product)}>
           {state.cart.includes(product) ? (

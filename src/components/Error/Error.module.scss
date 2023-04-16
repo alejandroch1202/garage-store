@@ -1,0 +1,43 @@
+@use '@styles/variables' as v;
+
+.Error {
+  display: flex;
+  max-width: 500px;
+  gap: 10px;
+  margin-top: 30px;
+  margin-left: 50px;
+  padding: 10px 20px;
+  background-color: #ffd6d7;
+  border-radius: 10px;
+  font-size: v.$lg;
+  animation: fadeIn 1s;
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  img {
+    width: 20px;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .Error {
+    margin-top: 60px;
+    margin-left: 40px;
+    max-width: 80%;
+  }
+}

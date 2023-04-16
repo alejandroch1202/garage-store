@@ -5,10 +5,9 @@ const OrderItem = ({ product }) => {
   return (
     <div className={styles.OrderItem}>
       <figure>
-        {/* <img src={product?.images[0]} alt={product?.title} /> */}
-        <img src={product?.image} alt={product?.title} />
+        <img src={product?.image} alt={product?.name} />
       </figure>
-      <p>{product?.title}</p>
+      <p>{product?.name}</p>
       <p>$ {product?.price.toFixed(2)}</p>
     </div>
   );

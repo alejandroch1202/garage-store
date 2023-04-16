@@ -58,26 +58,23 @@
   p:nth-child(3) {
     color: v.$light-gray;
     font-size: v.$lg;
-    margin-top: 0;
-    margin-bottom: 36px;
-    height: 140px;
-    overflow: scroll;
-    overflow-x: hidden;
   }
 
   .add-to-cart-button {
-    background-color: v.$garage-green;
-    border-radius: 8px;
-    border: none;
-    color: v.$white;
-    width: 100%;
-    cursor: pointer;
-    font-size: v.$lg;
-    font-weight: bold;
-    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: 90px;
+    background-color: v.$garage-green;
+    color: v.$white;
+    border-radius: 8px;
+    border: none;
+    font-size: v.$lg;
+    font-weight: bold;
+    height: 60px;
+    width: 80%;
+    cursor: pointer;
 
     img {
       margin-right: 10px;

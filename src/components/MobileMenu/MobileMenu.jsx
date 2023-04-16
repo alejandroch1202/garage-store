@@ -31,7 +31,7 @@ const MobileMenu = () => {
 
       <ul>
         <li>
-          <Link href="/">My orders</Link>
+          <Link href="/orders">My orders</Link>
         </li>
         <li>
           <Link href="/account">My account</Link>
