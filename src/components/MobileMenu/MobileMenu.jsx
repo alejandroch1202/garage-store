@@ -13,19 +13,19 @@ const MobileMenu = () => {
           <Link href="/">All</Link>
         </li>
         <li>
-          <Link href="/">Clothes</Link>
+          <Link href="/?category=1">Clothes</Link>
         </li>
         <li>
-          <Link href="/">Electronics</Link>
+          <Link href="/?category=2">Electronics</Link>
         </li>
         <li>
-          <Link href="/">Furnitures</Link>
+          <Link href="/?category=3">Furnitures</Link>
         </li>
         <li>
-          <Link href="/">Toys</Link>
+          <Link href="/?category=4">Toys</Link>
         </li>
         <li>
-          <Link href="/">Other</Link>
+          <Link href="/?category=5">Other</Link>
         </li>
       </ul>
 
