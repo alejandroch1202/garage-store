@@ -1,13 +1,13 @@
-import { useContext } from 'react';
-import AppContext from '@context/AppContext';
-import Layout from '@containers/Layout/Layout';
-import Search from '@components/Search/Search';
-import ProductList from '@containers/ProductList/ProductList';
-import ProductInfo from '@components/ProductInfo/ProductInfo';
-import Head from 'next/head';
+import { useContext } from 'react'
+import AppContext from '@context/AppContext'
+import Layout from '@containers/Layout/Layout'
+import Search from '@components/Search/Search'
+import ProductList from '@containers/ProductList/ProductList'
+import ProductInfo from '@components/ProductInfo/ProductInfo'
+import Head from 'next/head'
 
-function Home() {
-  const { state } = useContext(AppContext);
+function Home () {
+  const { state } = useContext(AppContext)
 
   return (
     <Layout>
@@ -18,7 +18,7 @@ function Home() {
       {state.productInfoIsOpen && <ProductInfo />}
       <ProductList />
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home

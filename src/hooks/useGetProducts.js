@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const useGetProducts = (API) => {
-  const [products, setProducts] = useState([]);
-  const router = useRouter();
+  const [products, setProducts] = useState([])
+  const router = useRouter()
 
   if (router.query.category) {
-    API = API + `&categoryId=${router.query.category}`;
+    API = API + `&categoryId=${router.query.category}`
   }
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData () {
       try {
-        const response = await fetch(API);
-        const data = await response.json();
-        setProducts(data);
+        const response = await fetch(API)
+        const data = await response.json()
+        setProducts(data)
       } catch (error) {
-        console.error('API error');
+        console.error('API error')
       }
     }
 
-    fetchData();
-  }, [API]);
+    fetchData()
+  }, [API])
 
-  return products;
-};
+  return products
+}
 
-export default useGetProducts;
+export default useGetProducts

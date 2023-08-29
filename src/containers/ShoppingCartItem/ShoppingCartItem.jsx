@@ -1,25 +1,25 @@
-import React, { useContext } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import CartItem from '@components/CartItem/CartItem';
-import AppContext from '@context/AppContext';
-import arrow from '@icons/left-arrow.svg';
-import styles from './ShoppingCartItem.module.scss';
+import React, { useContext } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import CartItem from '@components/CartItem/CartItem'
+import AppContext from '@context/AppContext'
+import arrow from '@icons/left-arrow.svg'
+import styles from './ShoppingCartItem.module.scss'
 
 const ShoppingCartItem = () => {
-  const { state, toggleShopping } = useContext(AppContext);
+  const { state, toggleShopping } = useContext(AppContext)
 
   const sumTotal = () => {
-    const reducer = (accumalator, currentValue) => accumalator + currentValue.price;
-    const sum = state.cart.reduce(reducer, 0).toFixed(2);
-    return sum;
-  };
+    const reducer = (accumalator, currentValue) => accumalator + currentValue.price
+    const sum = state.cart.reduce(reducer, 0).toFixed(2)
+    return sum
+  }
 
   return (
     <aside className={styles.ShoppingCartItem}>
-      <div className={styles['container']}>
+      <div className={styles.container}>
         <div className={styles['title-container']}>
-          <Image className={`${styles['more-clickable-area']} ${styles.pointer}`} src={arrow} alt="arrow" onClick={() => toggleShopping()} />
+          <Image className={`${styles['more-clickable-area']} ${styles.pointer}`} src={arrow} alt='arrow' onClick={() => toggleShopping()} />
           <p className={styles.title}>Shopping cart</p>
         </div>
         <div className={styles['my-order-content']}>
@@ -34,13 +34,13 @@ const ShoppingCartItem = () => {
             </p>
             <p>$ {sumTotal()}</p>
           </div>
-          <Link className={styles['primary-button']} href="/checkout">
+          <Link className={styles['primary-button']} href='/checkout'>
             Checkout
           </Link>
         </div>
       </div>
     </aside>
-  );
-};
+  )
+}
 
-export default ShoppingCartItem;
+export default ShoppingCartItem

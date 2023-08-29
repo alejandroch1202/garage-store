@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 const initialState = {
   cart: [],
@@ -7,33 +7,33 @@ const initialState = {
   shoppingIsOpen: false,
   menuIsOpen: false,
   mobileIsOpen: false,
-  productInfoIsOpen: false,
-};
+  productInfoIsOpen: false
+}
 
 const useInitialState = () => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialState)
 
   const addToCart = (payload) => {
     setState({
       ...state,
-      cart: state.cart.includes(payload) ? state.cart : [...state.cart, payload],
-    });
-  };
+      cart: state.cart.includes(payload) ? state.cart : [...state.cart, payload]
+    })
+  }
 
   const removeFromCart = (payload) => {
     setState({
       ...state,
-      cart: state.cart.filter((items) => items.id !== payload.id),
-    });
-  };
+      cart: state.cart.filter((items) => items.id !== payload.id)
+    })
+  }
 
   const setProduct = (payload) => {
     setState({
       ...state,
       product: payload,
-      productInfoIsOpen: !state.productInfoIsOpen,
-    });
-  };
+      productInfoIsOpen: !state.productInfoIsOpen
+    })
+  }
 
   const closeAll = () => {
     setState({
@@ -41,44 +41,44 @@ const useInitialState = () => {
       shoppingIsOpen: false,
       orderIsOpen: false,
       menuIsOpen: false,
-      mobileIsOpen: false,
-    });
-  };
+      mobileIsOpen: false
+    })
+  }
 
   const toggleOrder = () => {
     setState({
       ...state,
-      orderIsOpen: !state.orderIsOpen,
-    });
-  };
+      orderIsOpen: !state.orderIsOpen
+    })
+  }
 
   const toggleMenu = () => {
     setState({
       ...state,
-      menuIsOpen: !state.menuIsOpen,
-    });
-  };
+      menuIsOpen: !state.menuIsOpen
+    })
+  }
 
   const toggleMobile = () => {
     setState({
       ...state,
-      mobileIsOpen: !state.mobileIsOpen,
-    });
-  };
+      mobileIsOpen: !state.mobileIsOpen
+    })
+  }
 
   const toggleShopping = () => {
     setState({
       ...state,
-      shoppingIsOpen: !state.shoppingIsOpen,
-    });
-  };
+      shoppingIsOpen: !state.shoppingIsOpen
+    })
+  }
 
   const toggleInfo = () => {
     setState({
       ...state,
-      productInfoIsOpen: !state.productInfoIsOpen,
-    });
-  };
+      productInfoIsOpen: !state.productInfoIsOpen
+    })
+  }
 
   return {
     state,
@@ -90,8 +90,8 @@ const useInitialState = () => {
     toggleMenu,
     toggleMobile,
     toggleShopping,
-    toggleInfo,
-  };
-};
+    toggleInfo
+  }
+}
 
-export default useInitialState;
+export default useInitialState

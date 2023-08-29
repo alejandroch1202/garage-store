@@ -15,12 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/alejandroch1202/garage-store.git"
   },
-  "keywords": [
-    "nodejs",
-    "reactjs",
-    "nextjs",
-    "sass"
-  ],
+  "keywords": [ "nodejs", "reactjs", "nextjs", "sass" ],
   "author": "Alejandro Chavez <alejandrochavez1202@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -33,11 +28,15 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.37.0",
+    "eslint": "^8.0.1",
     "eslint-config-next": "^13.2.4",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
     "prettier": "^2.8.7",
-    "sass": "^1.60.0",
-    "standard": "^17.1.0"
+    "sass": "^1.60.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"

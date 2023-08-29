@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './OrderItem.module.scss';
+import React from 'react'
+import styles from './OrderItem.module.scss'
 
 const OrderItem = ({ product }) => {
   return (
@@ -10,7 +10,7 @@ const OrderItem = ({ product }) => {
       <p>{product?.name}</p>
       <p>$ {product?.price.toFixed(2)}</p>
     </div>
-  );
-};
+  )
+}
 
-export default OrderItem;
+export default OrderItem
