@@ -4,6 +4,6 @@
 Simple e-commerce made with Next.js 13
 
 - Login / sign up / recovery page
-- List products from [Garage Store API](https://github.com/alejandroch1202/garage-store-api)
 - Filter products by name and category
 - Responsive
+- List products from [Garage Store API](https://github.com/alejandroch1202/garage-store-api)
