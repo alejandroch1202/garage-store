@@ -7,11 +7,13 @@ import AppContext from '@context/AppContext'
 
 const Checkout = () => {
   const { state } = useContext(AppContext)
-  const productsLength = state.cart.length
+  const order = [...state.lastOrder]
+  const productsLength = order.length
+  const date = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`
 
   const sumTotal = () => {
     const reducer = (accumalator, currentValue) => accumalator + currentValue.price
-    const sum = state.cart.reduce(reducer, 0).toFixed(2)
+    const sum = order.reduce(reducer, 0).toFixed(2)
     return sum
   }
 
@@ -27,14 +29,14 @@ const Checkout = () => {
             <div className={styles['Checkout-content']}>
               <div className={styles.order}>
                 <p>
-                  <span>03.25.21</span>
+                  <span>{date}</span>
                   <span>{productsLength} articles</span>
                 </p>
                 <p>$ {sumTotal()} </p>
               </div>
             </div>
 
-            {state.cart.map((product) => (
+            {order.map((product) => (
               <OrderItem product={product} key={`orderItem-${product.id}`} />
             ))}
           </div>

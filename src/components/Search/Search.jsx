@@ -5,10 +5,10 @@ import styles from './Search.module.scss'
 import AppContext from '@context/AppContext'
 
 const Search = () => {
-  const { state } = useContext(AppContext)
+  const { setFilter } = useContext(AppContext)
 
   const setSearchFilter = (input) => {
-    state.filter = input.toLowerCase()
+    setFilter(input.toLowerCase())
   }
 
   return (

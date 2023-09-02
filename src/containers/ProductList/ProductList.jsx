@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Error from '@components/Error/Error'
 import ProductItem from '@components/ProductItem/ProductItem'
 import useGetProducts from '@hooks/useGetProducts'
@@ -9,25 +9,30 @@ const API = 'http://localhost:3005/api/v1/products?limit=50&offset=0'
 
 const ProductList = () => {
   const { state } = useContext(AppContext)
-  let products = useGetProducts(API)
+  const [products, setProducts] = useState([])
+  const fetchProducts = useGetProducts(API)
 
-  // TESTING
-  if (state.filter) {
-    products = products.filter((product) => product.name.toLowerCase().includes(state.filter))
-  }
+  useEffect(() => {
+    setProducts(fetchProducts)
 
-  if (products?.length === 0) {
-    return <Error />
-  }
+    if (state.filter) {
+      const filteredProducts = products.filter((product) => product.name.toLowerCase().includes(state.filter.toLowerCase()))
+      setProducts(filteredProducts)
+    }
+  }, [fetchProducts, state.filter])
 
   return (
-    <section className={styles['main-container']}>
-      <div className={styles.ProductList}>
-        {products?.map((product) => (
-          <ProductItem product={product} key={product.id} />
-        ))}
-      </div>
-    </section>
+    <>
+      { products.length > 0
+        ? <section className={styles['main-container']}>
+          <div className={styles.ProductList}>
+            {products.map((product) => (
+              <ProductItem product={product} key={product.id} />
+            ))}
+          </div>
+        </section>
+        : <Error message={'No products found'} />}
+    </>
   )
 }
 

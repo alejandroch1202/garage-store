@@ -14,6 +14,7 @@ const useGetProducts = (API) => {
       try {
         const response = await fetch(API)
         const data = await response.json()
+        if (!Array.isArray(data)) throw new Error('API error')
         setProducts(data)
       } catch (error) {
         console.error('API error')

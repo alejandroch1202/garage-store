@@ -7,7 +7,10 @@ const initialState = {
   shoppingIsOpen: false,
   menuIsOpen: false,
   mobileIsOpen: false,
-  productInfoIsOpen: false
+  productInfoIsOpen: false,
+  filter: null,
+  lastOrder: [],
+  orders: []
 }
 
 const useInitialState = () => {
@@ -80,6 +83,20 @@ const useInitialState = () => {
     })
   }
 
+  const setFilter = (input) => {
+    setState({
+      ...state,
+      filter: input
+    })
+  }
+
+  const setOrders = (input) => {
+    setState({
+      ...state,
+      orders: [...state.orders, input]
+    })
+  }
+
   return {
     state,
     addToCart,
@@ -90,7 +107,9 @@ const useInitialState = () => {
     toggleMenu,
     toggleMobile,
     toggleShopping,
-    toggleInfo
+    toggleInfo,
+    setFilter,
+    setOrders
   }
 }
 

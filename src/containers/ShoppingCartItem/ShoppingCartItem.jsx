@@ -15,6 +15,12 @@ const ShoppingCartItem = () => {
     return sum
   }
 
+  const handleCheckout = () => {
+    state.lastOrder = [...state.cart]
+    state.cart = []
+    toggleShopping(false)
+  }
+
   return (
     <aside className={styles.ShoppingCartItem}>
       <div className={styles.container}>
@@ -34,7 +40,7 @@ const ShoppingCartItem = () => {
             </p>
             <p>$ {sumTotal()}</p>
           </div>
-          <Link className={styles['primary-button']} href='/checkout'>
+          <Link onClick={handleCheckout} className={styles['primary-button']} href='/checkout'>
             Checkout
           </Link>
         </div>
