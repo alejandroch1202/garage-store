@@ -9,8 +9,7 @@ const initialState = {
   mobileIsOpen: false,
   productInfoIsOpen: false,
   filter: null,
-  lastOrder: [],
-  orders: []
+  lastOrder: []
 }
 
 const useInitialState = () => {

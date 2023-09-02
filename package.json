@@ -15,7 +15,12 @@
     "type": "git",
     "url": "git+https://github.com/alejandroch1202/garage-store.git"
   },
-  "keywords": [ "nodejs", "reactjs", "nextjs", "sass" ],
+  "keywords": [
+    "nodejs",
+    "reactjs",
+    "nextjs",
+    "sass"
+  ],
   "author": "Alejandro Chavez <alejandrochavez1202@gmail.com>",
   "license": "MIT",
   "bugs": {

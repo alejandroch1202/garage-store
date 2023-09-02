@@ -5,7 +5,7 @@ import useGetProducts from '@hooks/useGetProducts'
 import AppContext from '@context/AppContext'
 import styles from './ProductList.module.scss'
 
-const API = 'http://localhost:3005/api/v1/products?limit=50&offset=0'
+const API = 'http://192.168.0.102:3005/api/v1/products?limit=50&offset=0'
 
 const ProductList = () => {
   const { state } = useContext(AppContext)

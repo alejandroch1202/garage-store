@@ -1,41 +1,29 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Layout from '@containers/Layout/Layout'
 import OrderItem from '@components/OrderItem/OrderItem'
 import arrow from '@icons/arrow-dark.svg'
 import styles from './index.module.scss'
-import AppContext from '@context/AppContext'
 
-const Checkout = () => {
-  const { state } = useContext(AppContext)
-  const date = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`
-  const order = { id: crypto.randomUUID(), date, products: [...state.lastOrder] }
-  const productsLength = order.products.length
+const Order = () => {
+  const router = useRouter()
+  const [order, setOrder] = useState({})
 
   useEffect(() => {
     const orders = JSON.parse(localStorage.getItem('GS_ORDERS'))
-    if (!orders.some((item) => item.id === order.id)) {
-      orders.push(order)
-      localStorage.setItem('GS_ORDERS', JSON.stringify(orders))
-    }
+    const findOrder = orders.find((item) => item.id === router.query.id)
+    setOrder(findOrder)
   }, [])
-
-  const sumTotal = () => {
-    const reducer = (accumalator, currentValue) => accumalator + currentValue.price
-    const sum = order.products.reduce(reducer, 0).toFixed(2)
-    return sum
-  }
-
-  order.total = sumTotal()
 
   return (
     <>
       <Head>
-        <title>Checkout</title>
+        <title>Order</title>
       </Head>
       <Layout>
-        <div className={styles.Checkout}>
+        { order && <div className={styles.Checkout}>
           <div className={styles['Checkout-container']}>
             <div className={styles['title-container']}>
               <Link href='/orders'>
@@ -46,21 +34,21 @@ const Checkout = () => {
             <div className={styles['Checkout-content']}>
               <div className={styles.order}>
                 <p>
-                  <span>{date}</span>
-                  <span>{productsLength} articles</span>
+                  <span>{order.date}</span>
+                  <span>{order?.products?.length} articles</span>
                 </p>
                 <p>$ {order.total} </p>
               </div>
             </div>
 
-            {order.products.map((product) => (
+            {order?.products?.map((product) => (
               <OrderItem product={product} key={`orderItem-${product.id}`} />
             ))}
           </div>
-        </div>
+        </div> }
       </Layout>
     </>
   )
 }
 
-export default Checkout
+export default Order

@@ -10,13 +10,23 @@
     font-size: v.$xl;
     margin-bottom: 40px;
   }
+
   .Orders-container {
     display: grid;
     grid-template-rows: auto 1fr auto;
     width: 350px;
   }
+
   .Orders-content {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    max-height: 60vh;
+
+    &::-webkit-scrollbar {
+      display: none;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
   }
 }
